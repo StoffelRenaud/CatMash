@@ -83,3 +83,4 @@ production:
   database: CatMash_production
   username: CatMash
   password: <%= ENV['CATMASH_DATABASE_PASSWORD'] %>
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
