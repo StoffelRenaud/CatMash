@@ -1,2 +1,12 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-page-main-container">
+  <div class="home-page-left-container">
+    <%= link_to cat_path(@first_cat[:id]), method: :patch do %>
+      <%= image_tag @first_cat['url'], class:'home-page-img-container' %>
+    <% end %>
+  </div>
+  <div class="home-page-right-container">
+    <%= link_to cat_path(@second_cat[:id]), method: :patch do %>
+      <%= image_tag @second_cat['url'], class:'home-page-img-container' %>
+    <% end %>
+  </div>
+</div>

@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
+puts 'Cat is being destroyed...'
+Cat.destroy_all
+
+filepath         = 'https://latelier.co/data/cats.json'
+@serialized_cats = open(filepath).read
+@cats            = JSON.parse(@serialized_cats)
+@cats['images'].each do |cat|
+  Cat.create!(url: cat['url'],
+              rate: 0)
+end

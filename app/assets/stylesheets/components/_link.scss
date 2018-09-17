@@ -1,0 +1,9 @@
+// HomePage Link
+.home-page {
+  color: black;
+  font-weight: lighter;
+  &:hover {
+    text-decoration: none;
+    color: $orange;
+  }
+}
