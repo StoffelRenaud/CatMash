@@ -8,7 +8,9 @@
 require 'open-uri'
 puts 'Cat is being destroyed...'
 Cat.destroy_all
+puts 'Done...'
 
+puts 'Cat is being created'
 filepath         = 'https://latelier.co/data/cats.json'
 @serialized_cats = open(filepath).read
 @cats            = JSON.parse(@serialized_cats)
@@ -16,3 +18,4 @@ filepath         = 'https://latelier.co/data/cats.json'
   Cat.create!(url: cat['url'],
               rate: 0)
 end
+puts 'Done...'
